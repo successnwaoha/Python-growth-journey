@@ -1,0 +1,18 @@
+{
+    "incomes": [
+        {
+            "amount": 1000.0,
+            "category": "Freelance",
+            "description": "Did a job on upwork",
+            "date": "2025-12-26"
+        }
+    ],
+    "expenses": [
+        {
+            "amount": 400.0,
+            "category": "Fuel",
+            "description": "I bought fuel",
+            "date": "2025-12-26"
+        }
+    ]
+}
