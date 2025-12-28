@@ -1,0 +1,7 @@
+{
+    "base": "USD",
+    "target": "NGN",
+    "rate_raw": "101",
+    "scraped_at": "2025-12-28 19:57:11",
+    "source": "exchangerate.host"
+}
