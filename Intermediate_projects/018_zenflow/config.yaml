@@ -1,0 +1,14 @@
+# This is basically a Python Dictionary, but easier to read
+# The folder you want to clean up
+source_path: "~/Downloads"
+  
+reminders:
+  - task: "Drink Water"
+    interval_minutes: 1 # Let's use 1 minute for testing
+  - task: "Stretch"
+    interval_minutes: 2
+rules:
+  Images: [.jpg, .jpeg, .png, .gif]
+  Documents: [.pdf, .docx, .txt, .xlsx]
+  Music: [.mp3, .wav]
+  Videos: [.mp4, .mov]
