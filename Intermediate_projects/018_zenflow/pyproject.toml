@@ -10,5 +10,5 @@ dependencies = [
 flow = "flow.cli:entry_point"
 
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build-meta"
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
