@@ -10,6 +10,10 @@ model = joblib.load('titanic_model.pkl')
 
 REQUIRED_KEYS = ['Pclass', 'Sex', 'Age', 'Fare', 'SibSp', 'Parch']
 
+@app.route('/')
+def home():
+    return "<h1>Titanic Survival Predictor API</h1><p>Send a POST request to /predict to use the model.</p>"
+
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
