@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ZenChat</title>
+        <style>
+            body { font-family: sans-serif; padding: 20px; }
+            #messages { border: 1px solid #ccc; height: 300px; overflow-y: scroll; padding: 10px; margin-bottom: 10px; }
+        </style>
+    </head>
+    <body>
+        <h1>ZenChat Room</h1>
+        <div id="messages"></div>
+        <input type="text" id="messageText" autocomplete="off" placeholder="Type a message..."/>
+        <button onclick="sendMessage()">Send</button>
+
+        <script>
+            // Create a random ID for this user
+            var client_id = Math.floor(Math.random() * 1000);
+            // Connect to our FastAPI WebSocket
+            var ws = new WebSocket(`ws://localhost:8000/ws/${client_id}`);
+
+            ws.onmessage = function(event) {
+                var messages = document.getElementById('messages');
+                var message = document.createElement('p');
+                message.textContent = event.data;
+                messages.appendChild(message);
+                messages.scrollTop = messages.scrollHeight; // Auto-scroll
+            };
+
+            function sendMessage() {
+                var input = document.getElementById("messageText");
+                ws.send(input.value);
+                input.value = '';
+            }
+        </script>
+    </body>
+</html>
